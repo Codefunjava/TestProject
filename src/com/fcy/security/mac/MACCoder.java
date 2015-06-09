@@ -1,4 +1,4 @@
-package com.fcy.security;
+package com.fcy.security.mac;
 
 import javax.crypto.KeyGenerator;
 import javax.crypto.Mac;
