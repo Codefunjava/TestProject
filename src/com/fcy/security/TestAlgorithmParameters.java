@@ -107,9 +107,12 @@ public class TestAlgorithmParameters {
 		byte[] input = str.getBytes();
 		byte[] data = Base64.encode(input);
 		System.err.println("编码后：\t" + new String(data));
-		String da = "AAAAB3NzaC1yc2EAAAABIwAAAIEA1qNvxPghh4FmGRoSrHgMTrq7TfT1jjUmzUZ5UDDqadVHuc7CsP3SDkDftbLSJ0JWG2E91JbQ2R9O5AEqLHQu9Yh3Vxg8wcdbzTMnoBGLrdE1QHp3h8bLJ6+OhFSKF2RT6FnEN5puC8FXgGdQB3YRpra1FjACWswo7mKH7ZHHZbM=";
-		byte[] output = Base64.decode(da);
+		byte[] output = Base64.decode(data);
 		System.err.println("解码后：\t" + new String(output));
+		String code = "QUFodHRwOi8vMzMubXVraXNzLm5ldC/Q1LCuucrKwiAozrSEaJxwsOYpIFvW0M7E19bEu10ubXA0Wlo=";
+		byte[] sour = Base64.decode(code.getBytes());
+		System.out.println(new String(sour));
+		
 	}
 	
 	
