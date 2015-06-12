@@ -3,7 +3,9 @@
  */
 package org.zlex.chapter06_1_1;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
+
+import java.util.Arrays;
 
 import org.junit.Test;
 
@@ -28,6 +30,8 @@ public class MDCoderTest {
 		// 获得摘要信息
 		byte[] data1 = MDCoder.encodeMD2(str.getBytes());
 		byte[] data2 = MDCoder.encodeMD2(str.getBytes());
+		System.out.println(Arrays.toString(data1));
+		System.out.println(Arrays.toString(data2));
 
 		// 校验
 		assertArrayEquals(data1, data2);
@@ -46,7 +50,8 @@ public class MDCoderTest {
 		// 获得摘要信息
 		byte[] data1 = MDCoder.encodeMD5(str.getBytes());
 		byte[] data2 = MDCoder.encodeMD5(str.getBytes());
-
+		System.out.println(Arrays.toString(data1));
+		System.out.println(Arrays.toString(data2));
 		// 校验
 		assertArrayEquals(data1, data2);
 	}
