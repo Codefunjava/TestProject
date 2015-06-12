@@ -13,6 +13,9 @@ import org.bouncycastle.jce.provider.BouncyCastleProvider;
 public class IDEACoder {
 	
 	public static final String KEY_ALGORITHM = "IDEA";
+	/**
+	 * 加密/解密算法 / 工作模式 / 填充方式
+	 */
 	public static final String CIPHER_ALGORITHM = "IDEA/ECB/ISO10126Padding";
 	
 	private static Key toKey(byte[] key) throws Exception {
