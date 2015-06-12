@@ -1,14 +1,23 @@
+/**
+ * 2008-6-11
+ */
 package com.fcy.security.des;
 
-import java.util.Arrays;
+import static org.junit.Assert.*;
 
 import org.apache.commons.codec.binary.Base64;
 import org.junit.Test;
 
+/**
+ * DES安全编码组件校验
+ * 
+ * @author 梁栋
+ * @version 1.0
+ */
 public class DESCoderTest {
+
 	/**
-	 * 运行后，得到的解密结果为空字符串
-	 * 不明原因
+	 * 测试
 	 * 
 	 * @throws Exception
 	 */
@@ -16,31 +25,23 @@ public class DESCoderTest {
 	public final void test() throws Exception {
 		String inputStr = "DES";
 		byte[] inputData = inputStr.getBytes();
-		System.out.println("原文：\t" + Arrays.toString(inputData));
-		System.out.println("原文：\t" + inputStr);
-		
+		System.err.println("原文:\t" + inputStr);
+
+		// 初始化密钥
 		byte[] key = DESCoder.initKey();
-		System.out.println("密钥：\t" + Arrays.toString(key));
-		System.out.println("密钥：\t" + Base64.encodeBase64String(key));
+		System.err.println("密钥:\t" + Base64.encodeBase64String(key));
+
+		// 加密
 		inputData = DESCoder.encrypt(inputData, key);
-		System.out.println("加密后：\t" + Arrays.toString(inputData));
+		System.err.println("加密后:\t" + Base64.encodeBase64String(inputData));
+
+		// 解密
 		byte[] outputData = DESCoder.decrypt(inputData, key);
-		System.out.println("解密后：\t" + Arrays.toString(outputData));
+
 		String outputStr = new String(outputData);
-		System.out.println("解密后：\t" + outputStr);
-		
-		
+		System.err.println("解密后:\t" + outputStr);
+
+		// 校验
+		assertEquals(inputStr, outputStr);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
