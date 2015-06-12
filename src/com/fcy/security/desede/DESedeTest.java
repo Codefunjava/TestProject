@@ -4,10 +4,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.junit.Test;
 
 public class DESedeTest {
-	/**
-	 * 运行成功
-	 * @throws Exception
-	 */
+	
 	@Test
 	public void test() throws Exception {
 		String inputStr = "DESede";
