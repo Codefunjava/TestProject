@@ -1,0 +1,2 @@
+
+其他形式的md算法，包括Tiger、Whirlpool和GOST3411共3种算法
