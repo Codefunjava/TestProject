@@ -40,10 +40,10 @@ public class MD5CoderTest {
 	 */
 	@Test
 	public final void testEncodeMD5Hex() throws Exception {
-		String str = "MD5Hex消息摘要";
+		String str = "EncodeMD5(agent.gm99.com)";
 
 		// 获得摘要信息
-		String data1 = MD5Coder.encodeMD5Hex(str);
+		String data1 = MD5Coder.encodeMD5Hex(str).toUpperCase();
 		String data2 = MD5Coder.encodeMD5Hex(str);
 
 		System.err.println("原文：\t" + str);
