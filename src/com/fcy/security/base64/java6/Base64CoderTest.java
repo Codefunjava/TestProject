@@ -1,21 +1,13 @@
-/**
- * 2009-8-20
- */
 package com.fcy.security.base64.java6;
 
-import org.junit.Test;
+import java.util.Base64;
 
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
+import org.junit.Test;
 
 /**
  * Base64编码与解码测试类
  * 
- * @author 梁栋
- * @version 1.0
- * @since 1.0
  */
-@SuppressWarnings("restriction")
 public class Base64CoderTest {
 
 	/**
@@ -25,19 +17,29 @@ public class Base64CoderTest {
 	 */
 	@Test
 	public final void demo() throws Exception {
-		String str = "Java加密与解密的艺术";
+		String str = "Base64编码与解码测试";
 		System.err.println("原文:\n\t" + str);
 		byte[] input = str.getBytes();
 
 		// Base64编码
-		BASE64Encoder encoder = new BASE64Encoder();
-		String data = encoder.encodeBuffer(input);
+		Base64.Encoder encoder = Base64.getEncoder();
+		String data = encoder.encodeToString(input);
 		System.err.println("编码后:\n\t" + data);
-
+		
 		// Base64解码
-		BASE64Decoder decoder = new BASE64Decoder();
-		byte[] output = decoder.decodeBuffer(data);
+		Base64.Decoder decoder = Base64.getDecoder();
+		byte[] output = decoder.decode(data);
 		System.err.println("解码后:\n\t" + new String(output));
+		
+		// UrlBase64编码
+		Base64.Encoder urlEncoder = Base64.getUrlEncoder();
+		String urlData = urlEncoder.encodeToString(input);
+		System.err.println("url编码后:\n\t" + urlData);
+		
+		// UrlBase64解码
+		Base64.Decoder urlDecoder = Base64.getUrlDecoder();
+		byte[] urlOutput = urlDecoder.decode(urlData);
+		System.err.println("url解码后:\n\t" + new String(urlOutput));
 
 	}
 
