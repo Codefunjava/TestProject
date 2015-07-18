@@ -12,7 +12,7 @@ public class TestProject {
 	public final String COM = "&language=zh&country=TW&gameCode=ahlm&serverCode=112&imei=22144&mac=1556445";
 	//public final String facebookId = "322375484592161";
 	//public final String facebookId = "419401101552283";
-	public final String facebookId = "1469362886687698";
+	public final String facebookId = "471381679691540";
 	//public final String facebookId = "1531741403772477";
 	//public final String facebookId = "4194333333";
 	public final String userId = "123456";
@@ -85,13 +85,13 @@ public class TestProject {
 		//int giftId = r.nextInt(11) + 1;
 		long start = System.currentTimeMillis();
 		//String tyURL = "/fBGiftDonate/createFBGiftDonate.do?facebookId=%s&userId=13865889&ip=202.39.241.99&imei=864644026415984&donateType=2&giftId=4&mac=14:f6:5a:a2:05:44&serverCode=0&facebookName=ByeMo&roleId=TianPeng&country=CN&donatedFacebookId=1531741403772477&language=zh&gameCode=ahlm";
-		String lwURL = "/fBGiftDonate/createFBGiftDonate.do?facebookId=%s&userId=19052017&ip=202.39.241.99&imei=AC1284C7-5329-446C-AA35-2BAA5D708684&donateType=2&releId=瘋狂牛大力&giftId=%s&mac=020000000000&serverCode=11&facebookName=李威&country=TW&donatedFacebookId=%s&language=zh&gameCode=ahlm";
+		String lwURL = "/fBGiftDonate/createFBGiftDonate.do?facebookId=%s&userId=13463797&ip=202.39.241.99&imei=AC1284C7-5329-446C-AA35-2BAA5D708684&donateType=2&releId=瘋狂牛大力&giftId=%s&mac=020000000000&serverCode=11&facebookName=李威&country=TW&donatedFacebookId=%s&language=zh&gameCode=ahlm";
 		long giftId[] = {70729, 70730, 70731, 70732, 70733};
 		
 		int i = 0;
 		for(long fb : fb_list){
 			String url = URL_PREFIX + lwURL;
-			url = String.format(url, fb, facebookId, giftId[i]);
+			url = String.format(url, fb, giftId[i], facebookId);
 			System.out.println("url: " + url);
 			Thread.sleep(3000);
 			String result = HttpClientUtils.callServer(url);
@@ -194,5 +194,10 @@ public class TestProject {
 		url = String.format(url, facebookId);
 		String result = HttpClientUtils.callServer(url);
 		System.out.println(result);
+	}
+	
+	@Test
+	public void doPost() throws Exception{
+		String url = "http://activity.gm99.com/fBGetAward/getGetAwardOrderId.do";
 	}
 }
