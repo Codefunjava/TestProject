@@ -45,7 +45,7 @@ public class MDCoderTest {
 	 */
 	@Test
 	public final void testEncodeMD5() throws Exception {
-		String str = "MD5消息摘要";
+		String str = "admin";
 
 		// 获得摘要信息
 		byte[] data1 = MDCoder.encodeMD5(str.getBytes());

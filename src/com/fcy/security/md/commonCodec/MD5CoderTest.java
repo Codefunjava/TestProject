@@ -23,7 +23,7 @@ public class MD5CoderTest {
 	 */
 	@Test
 	public final void testEncodeMD5() throws Exception {
-		String str = "MD5消息摘要";
+		String str = "admin";
 
 		// 获得摘要信息
 		byte[] data1 = MD5Coder.encodeMD5(str);
@@ -40,7 +40,7 @@ public class MD5CoderTest {
 	 */
 	@Test
 	public final void testEncodeMD5Hex() throws Exception {
-		String str = "EncodeMD5(activity.gm99.com)";
+		String str = "admin";
 
 		// 获得摘要信息
 		String data1 = MD5Coder.encodeMD5Hex(str).toUpperCase();
