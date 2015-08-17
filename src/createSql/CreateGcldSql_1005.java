@@ -23,9 +23,9 @@ public class CreateGcldSql_1005 {
 		String sql1 = "INSERT INTO t_activity_sequence(serialNumber, sequenceType, gameCode, activity, msg) VALUES";
 		String sql2 = "('serialNumber', 'sequenceType', 'gameCode', 'activity', 'msg'),";
 		//马来西亚
-		String activity = "10051";
+		//String activity = "10051";
 		//新加坡
-		//String activity = "10052";
+		String activity = "10052";
 		String gameCode = "gcld";
 		
 		File tof = new File("D:\\创建sql语句\\" + "sql语句" + ".sql");
