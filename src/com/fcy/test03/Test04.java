@@ -2,6 +2,7 @@ package com.fcy.test03;
 
 import org.junit.Test;
 
+
 public class Test04 {
 	public char nextCharacter(char ch){
 		int next = 0;
